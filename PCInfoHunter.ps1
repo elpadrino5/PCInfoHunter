@@ -100,7 +100,7 @@ function imageVersion
     
     if (Test-Path #path of file with path version)
     {
-        $PatchVersion = Get-Content -Path \\$computer\C$\Custom\Docs\patch_version.txt    
+        $PatchVersion = Get-Content -Path \\$computer\#path of file with path version   
     }
     else
     { 
