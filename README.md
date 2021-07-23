@@ -29,11 +29,11 @@ Location, AD_Path, Manufacturer, SerialNumber, BIOSversion, BIOSdate, BaseBoard,
   
 EXAMPLES
 -----------
-pcinfohunter -search -computer computer1,computer2,computer3... -save C:\Users\Current_User\Desktop\results.csv
-pcinfohunter -search -computer computer_list.txt 
-pcinfohunter -search *
-pcinfohunter -update -file C:\Users\Current_User\Desktop\results.csv -save C:\Users\Current_User\Desktop\results.csv -log C:\Users\Current_User\Desktop\results_log.txt
-pcinfohunter -i
+pcinfohunter -search -computer computer1,computer2,computer3... -save C:\Users\Current_User\Desktop\results.csv<br>
+pcinfohunter -search -computer computer_list.txt<br>
+pcinfohunter -search *<br>
+pcinfohunter -update -file C:\Users\Current_User\Desktop\results.csv -save C:\Users\Current_User\Desktop\results.csv -log C:\Users\Current_User\Desktop\results_log.txt<br>
+pcinfohunter -i<br>
 
 NOTES
 -----
