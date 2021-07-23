@@ -334,7 +334,7 @@ function GetDuration($stopwatch)
 function FilterHostnames
 {
     $hts = Get-ADComputer -Filter 'Name -like "*"' -Properties Name,OperatingSystem | Where-Object {($_.operatingSystem -notlike '*server*') -and ($_.operatingSystem -ne $null)} | Sort-Object | foreach{$_.name} 
-    $servers = "dsc-nvr-2 fake-f9kl10s20x graviton HEIMDALL1 NAGGER photon photon1 photon2 photon3"
+    $servers = ""
     #[System.Collections.ArrayList]$allhosts = [System.Collections.ArrayList]::new();
     $allhosts = @()
 
@@ -346,11 +346,7 @@ function FilterHostnames
           
         if ($each -ne '')
         {
-            #$os = Get-ADComputer $each  -Properties OperatingSystem | select -ExpandProperty OperatingSystem -First 1 
-            if ((-not($each  -like '*dsc-nvr-2*')) -and (-not($each  -like '*NAGGER*')) -and (-not($each  -like '*fake-f9kl10s20x*')) -and (-not($each  -like '*graviton*')) -and (-not($each  -like '*HEIMDALL1*')) -and (-not($each  -like '*photon*')))
-            {
                 $allhosts += $each
-            } 
         }
     }
     return $allhosts
@@ -404,7 +400,7 @@ pcinfohunter -i
 
 function Import_Csv($file)
 {
-    $default_path = "C:\Users\amartinez\Desktop\repos\helpdesk\InfoHunterData\PCInfo\PCInfo.csv"
+    $default_path = "C:\PCInfo.csv"
 
     if (!($file))
         {
@@ -772,7 +768,6 @@ function Update($csvFile,$table,$log)
                         {$row.ModelNumber = Get-WmiObject win32_computerSystem -ComputerName $pc |select -ExpandProperty Model -First 1} #attempt to get a wmi object
                     catch
                         {
-                            print -string "no es facil";
                             print -string $Error; #print last error
                         } 
                         
