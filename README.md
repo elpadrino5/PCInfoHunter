@@ -1,4 +1,5 @@
 # PCInfoHunter
+This is a script written in Powershell used to extract, display, store, update, and search system information of connected computers in a network.
 
 SYNTAX
 -----------
